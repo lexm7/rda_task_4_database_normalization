@@ -9,7 +9,7 @@ CREATE TABLE Countries (
     PRIMARY KEY (ID)
 );
 
-CREATE TABLE ProductsNames (
+CREATE TABLE ProductNames (
     ID INT,
     ProductName VARCHAR(50),
     PRIMARY KEY (ID)
@@ -29,7 +29,7 @@ CREATE TABLE ProductInventory (
     WarehouseAmount INT,
     WarehouseID INT,
     FOREIGN KEY (WarehouseID) REFERENCES Warehouses(ID) ON DELETE NO ACTION,
-    FOREIGN KEY (ProductID) REFERENCES ProductsNames(ID) ON DELETE NO ACTION,
+    FOREIGN KEY (ProductID) REFERENCES ProductNames(ID) ON DELETE NO ACTION,
     PRIMARY KEY (ID)
 );
 
@@ -41,8 +41,8 @@ INSERT INTO Countries (ID,Name)
 	VALUES (2, 'Country2');
 
 
-INSERT INTO ProductsNames (ID,ProductName)
-	VALUES (1, 'AwersomeProduct');
+INSERT INTO ProductNames (ID,ProductName)
+	VALUES (1, 'AwesomeProduct');
 
 INSERT INTO Warehouses (ID,WarehouseName,WarehouseAddress,CountryID)
 	VALUES (1, 'Warehouse-1', 'City-1, Street-1', 1);
